@@ -1,7 +1,0 @@
-FTP -- Stands for File TRANSFER Protocol
-Usually performed for 2 tasks - "Get" and "Put"
-
-Traditional FTP do lack security.. Only security feature they do have is login and password..
-2 main implementations of secure FTP: SFTP and FTP/S..Both support encryption.
-
-
