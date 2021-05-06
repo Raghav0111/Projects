@@ -1,0 +1,109 @@
+raghav@RK:/etc$ sudo nano vsftpd.config
+[sudo] password for raghav: 
+raghav@RK:/etc$ sudo systemctl restart vsftpd.service
+raghav@RK:/etc$ ls
+acpi                           gai.conf         magic                    runit
+adduser.conf                   gamemode.ini     magic.mime               rygel.conf
+alsa                           gdb              mailcap                  sane.d
+alternatives                   gdm3             mailcap.order            security
+anacrontab                     geoclue          manpath.config           selinux
+apache2                        ghostscript      mime.types               sensors3.conf
+apg.conf                       gitweb.conf      mke2fs.conf              sensors.d
+apm                            glvnd            modprobe.d               service
+apparmor                       gnome            modules                  services
+apparmor.d                     groff            modules-load.d           sgml
+apport                         group            mpv                      shadow
+appstream.conf                 group-           mtab                     shadow-
+apt                            grub.d           mtools.conf              shells
+avahi                          gshadow          mysql                    skel
+bash.bashrc                    gshadow-         nanorc                   snmp
+bash_completion                gss              netplan                  speech-dispatcher
+bash_completion.d              gtk-2.0          network                  ssh
+bindresvport.blacklist         gtk-3.0          networkd-dispatcher      ssl
+binfmt.d                       hdparm.conf      NetworkManager           subgid
+bluetooth                      host.conf        networks                 subgid-
+brlapi.key                     hostid           newt                     subuid
+brltty                         hostname         nsswitch.conf            subuid-
+brltty.conf                    hosts            openal                   sudoers
+ca-certificates                hosts.allow      openvpn                  sudoers.d
+ca-certificates.conf           hosts.deny       opt                      sv
+ca-certificates.conf.dpkg-old  hp               os-release               sysctl.conf
+calendar                       ifplugd          PackageKit               sysctl.d
+chatscripts                    ImageMagick-6    pam.conf                 systemd
+console-setup                  init             pam.d                    terminfo
+cracklib                       init.d           papersize                thermald
+cron.d                         initramfs-tools  passwd                   thunderbird
+cron.daily                     inputrc          passwd-                  timezone
+cron.hourly                    insserv.conf.d   pcmcia                   tmpfiles.d
+cron.monthly                   iproute2         perl                     ubuntu-advantage
+crontab                        issue            pki                      ucf.conf
+cron.weekly                    issue.net        pm                       udev
+cups                           kernel           pnm2ppa.conf             udisks2
+cupshelpers                    kernel-img.conf  polkit-1                 ufw
+dbus-1                         kerneloops.conf  popularity-contest.conf  update-manager
+dconf                          ldap             ppp                      update-motd.d
+debconf.conf                   ld.so.cache      profile                  update-notifier
+debian_version                 ld.so.conf       profile.d                UPower
+default                        ld.so.conf.d     protocols                usb_modeswitch.conf
+deluser.conf                   legal            pulse                    usb_modeswitch.d
+depmod.d                       libao.conf       python2.7                vbox
+dhcp                           libaudit.conf    python3                  vdpau_wrapper.cfg
+dictionaries-common            libblockdev      python3.8                vim
+dpkg                           libnl-3          rc0.d                    vsftpd.conf
+e2scrub.conf                   libpaper.d       rc1.d                    vsftpd.config
+emacs                          libreoffice      rc2.d                    vtrgb
+environment                    locale.alias     rc3.d                    vulkan
+environment.d                  locale.gen       rc4.d                    wgetrc
+ethertypes                     localtime        rc5.d                    whoopsie
+firefox                        logcheck         rc6.d                    wpa_supplicant
+fonts                          login.defs       rcS.d                    X11
+fprintd.conf                   logrotate.conf   resolv.conf              xattr.conf
+fstab                          logrotate.d      rmt                      xdg
+ftpusers                       lsb-release      rpc                      xml
+fuse.conf                      ltrace.conf      rsyslog.conf             zsh_command_not_found
+fwupd                          machine-id       rsyslog.d
+raghav@RK:/etc$ cd vsftpd
+bash: cd: vsftpd: No such file or directory
+raghav@RK:/etc$ ls -l vsftpd*
+-rw-r--r-- 1 root root 5850 Mar  6  2019 vsftpd.conf
+-rw-r--r-- 1 root root  231 May  6 06:21 vsftpd.config
+raghav@RK:/etc$ sudo nano vsftpd.conf
+raghav@RK:/etc$ sudo vi vsftpd.conf
+raghav@RK:/etc$ sudo systemctl restart vsftpd.service
+raghav@RK:/etc$ ftp localhost
+Connected to localhost.
+220 (vsFTPd 3.0.3)
+Name (localhost:raghav): chachu
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> put passwd
+local: passwd remote: passwd
+200 PORT command successful. Consider using PASV.
+150 Ok to send data.
+226 Transfer complete.
+2999 bytes sent in 0.00 secs (23.2526 MB/s)
+ftp> help
+Commands may be abbreviated.  Commands are:
+
+!		dir		mdelete		qc		site
+$		disconnect	mdir		sendport	size
+account		exit		mget		put		status
+append		form		mkdir		pwd		struct
+ascii		get		mls		quit		system
+bell		glob		mode		quote		sunique
+binary		hash		modtime		recv		tenex
+bye		help		mput		reget		tick
+case		idle		newer		rstatus		trace
+cd		image		nmap		rhelp		type
+cdup		ipany		nlist		rename		user
+chmod		ipv4		ntrans		reset		umask
+close		ipv6		open		restart		verbose
+cr		lcd		prompt		rmdir		?
+delete		ls		passive		runique
+debug		macdef		proxy		send
+ftp> exit
+421 Timeout.
+raghav@RK:/etc$ 
